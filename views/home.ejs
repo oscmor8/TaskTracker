@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+   <section class="title">
+        <h1>
+            Task Tracker
+        </h1>
+   </section>
+        <div id = "box">
+        <%items.forEach(function(item){%>
+            <form action="/delete" method="post">
+            <button class="dltbtn" name="deletebtn" value="<%=item._id%>" onchange="this.form.submit()">Delete</button>
+            <p><%=item.item%></p>
+             </form>
+            <% }) %>
+    </div>
+<section class="textbox">
+    <form action="/" method="POST">
+        <input class="text" type="text" name="input">
+        <button class="btn" type="submit">Submit</button>
+    </form>
+</section>
+</body>
+</html>
